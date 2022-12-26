@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  blog_strapi_api:
+    container_name: blog_strapi_api
+    hostname: blog_strapi_api
+    image: postgres
+    restart: always
+    environment:
+       POSTGRES_USER: scorpion
+       POSTGRES_PASSWORD: test2310
+       POSTGRES_DB: blog-strapi
+       PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ~/.PostgressData/postgresonly/blog_strapi_api:/var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432
